@@ -4,7 +4,7 @@
 hook一个dotnet项目的示例
 
 #### 软件架构
-软件架构说明
+通过 cpp调用hostfxr获取环境变量名为dotnet的路径、注册表dotnet路径、以及默认的dotnet安装路径调用coreclr.dll 实现像某个指定的进程注入一个dotnet应用
 
 
 #### 安装教程
