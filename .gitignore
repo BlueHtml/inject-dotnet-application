@@ -1,0 +1,8 @@
+/src/.vs
+/src/x64
+/src/Dotnet/x64
+/src/Injector/obj
+/src/Injector/bin
+/src/WinFormsApp1/.vs
+/src/WinFormsApp1/bin
+/src/WinFormsApp1/obj

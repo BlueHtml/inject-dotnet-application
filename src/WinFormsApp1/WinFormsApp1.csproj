@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="mkdir $(SolutionDir)Injector\bin\x64\$(Configuration)\net5.0\application&#xD;&#xA;copy $(OutDir) $(SolutionDir)Injector\bin\x64\$(Configuration)\net5.0\application" />
+  </Target>
+
+</Project>
