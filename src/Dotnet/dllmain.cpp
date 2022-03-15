@@ -40,24 +40,26 @@ void Load(HMODULE hModule)
 		appPath.append(L"\\");
 		appPath.append(util.S2ws(root["appPath"].asCString()));
 
-
-		//{ L"dotnet.exe", L"E:\\个人文件\\RunCoreClr\\ConsoleApplication1\\x64\\Debug\\application\\WinFormsApp1.dll" }
 		const char_t** argv = new const char_t * [argsLength];
 		wstring dotnetStr = util.S2ws(root["dotnet"].asCString());
 		argv[0] = dotnetStr.c_str();
 		argv[1] = appPath.c_str();
-		for (int i = 0; i < argsLength - 2; i++)
+		wstring* data = new wstring[root["appArgs"].size()];
+		Json::Value args = root["appArgs"];
+		for (int i = 0; i < root["appArgs"].size(); i++)
 		{
-			argv[i] = util.S2ws(root["appArgs"][i].asCString()).c_str();
+			
+			data[i] = util.S2ws(args[i].asString());
+			argv[(i + 2)] = data[i].c_str();
 		}
 		Dotnet dotnet = { path };
 		dotnet.Init();
 		dotnet.Run(argsLength, argv);
 		IsLoaded = true;
 	}
-	catch (const std::exception&)
+	catch (const std::exception& ex)
 	{
-
+		MessageBox(NULL, ConstantUtil::S2ws(ex.what()).c_str(), L"", 0);
 	}
 }
 
