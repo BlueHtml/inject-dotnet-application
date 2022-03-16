@@ -7,11 +7,11 @@ hook一个dotnet项目的示例
 通过 cpp调用hostfxr获取环境变量名为dotnet的路径、注册表dotnet路径、以及默认的dotnet安装路径调用coreclr.dll 实现像某个指定的进程注入一个dotnet应用
 
 
-#### 安装教程
+#### 调试说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  添加环境变量 COREHOST_TRACE 为1
+2.  添加环境变量 COREHOST_TRACEFILE "E:\\Demo\\dotnet-core\\artifacts\\bin\\win-x64.Debug\\corehost\\log.txt"
+3.  运行dotnet程序将在上述文件中生成dotnet运行日志
 
 #### 使用说明
 
