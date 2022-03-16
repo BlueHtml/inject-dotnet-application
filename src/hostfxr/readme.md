@@ -1,0 +1,1 @@
+通过添加两处代码，重新编译 host.native 使hostfxr.dll支持从dotnet环境变量和hostfxr.dll所在路径读取dotnet.config("runtimeOption")字段，配置runtime
